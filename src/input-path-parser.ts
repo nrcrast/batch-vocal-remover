@@ -42,6 +42,7 @@ export class InputPathParser {
             tags.common.album = `${tags.common.album} (Instrumental)`;
             tags.common.title = `${tags.common.title} (Instrumental)`;
         }
+        finalFileName = finalFileName.replace( /[<>:"\/\\|?*]+/g, '' );
         let finalOutputMp3 = path.resolve(process.env.VOC_REMOVER_PATH, 'separated', directory ? directory : '.', finalFileName);
 
         return {
